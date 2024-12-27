@@ -9,7 +9,11 @@ def negrito(text):
   return "*" + text + "*"
 
 def formatar(x):
-    if (x>1000000):
+    if (x>1000000000):
+        x=x/1000000000
+        x=round(x, 2)
+        x=str(x)+" bi"
+    elif (x>1000000):
         x=x/1000000
         x=round(x, 2)
         x=str(x)+" mi"
@@ -209,12 +213,15 @@ print("\n========================")
 
 print("\n", negrito("🏹 EXPEC. REL. FOCUS 2024 🏹"))
 
-print("\n🎯 PIB Total:  ", f"{pibT/100:.2f}%")
+print("\n🎯 PIB Total:  ", str(f"{pibT/100:.2f}%").replace('.',','))
 
-print("\n🎯 Câmbio: R$", f"{cambio/100:.2f}")
+print("\n🎯 Câmbio: R$", str(f"{cambio/100:.2f}").replace('.',','))
 
-print("\n🎯 Selic:  ", f"{selic/100:.2f}%")
+print("\n🎯 Selic:  ", str(f"{selic/100:.2f}%").replace('.',','))
 
-print("\n🎯 IPCA:   ", f"{ipca/100:.2f}%")
+print("\n🎯 IPCA:   ", str(f"{ipca/100:.2f}%").replace('.',','))
 
 print("\n", negrito("🔖 Fonte: FOCUS"), dataF)
+
+
+
